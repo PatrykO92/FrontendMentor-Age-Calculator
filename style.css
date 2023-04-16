@@ -1,0 +1,138 @@
+:root {
+  --purple: hsl(259, 100%, 65%);
+  --light_red: hsl(0, 100%, 67%);
+  --white: hsl(0, 0%, 100%);
+  --off-white: hsl(0, 0%, 94%);
+  --light-grey: hsl(0, 0%, 86%);
+  --smokey-grey: hsl(0, 1%, 44%);
+  --off-black: hsl(0, 0%, 8%);
+}
+
+@font-face {
+  font-family: Poppins;
+  src: url("./assets/fonts/Poppins-Regular.ttf");
+}
+
+@font-face {
+  font-family: Poppins;
+  src: url("./assets/fonts/Poppins-Bold.ttf");
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: Poppins;
+  src: url("./assets/fonts/Poppins-Italic.ttf");
+  font-weight: italic;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Poppins;
+}
+
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+textarea,
+button,
+select {
+  font: inherit;
+}
+
+body {
+  background-color: var(--light-grey);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 95vh;
+}
+
+button {
+  border: 0;
+  border-radius: 50%;
+  padding: 15px;
+  background-color: var(--purple);
+  max-width: 3.5rem;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--white);
+  border-radius: 15px 15px 100px 15px;
+  padding: 2rem;
+}
+
+form {
+  min-width: 37rem;
+}
+
+form > div {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+form label > p {
+  font-size: 0.7rem;
+  letter-spacing: 0.1rem;
+  margin-bottom: 0.2rem;
+  font-weight: 900;
+  color: var(--smokey-grey);
+}
+
+form label > input {
+  max-width: 9rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border: 1px solid var(--light-grey);
+  border-radius: 5px;
+  padding: 0.3rem 1rem;
+}
+
+.form-div-button {
+  justify-content: flex-end;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    transparent 50%,
+    var(--light-grey) 51%,
+    transparent 53%,
+    transparent
+  );
+}
+
+.outputs {
+  font-size: 4rem;
+  font-weight: 1000;
+}
+
+.outputs > div > span:nth-child(1) {
+  color: var(--purple);
+}
+
+footer {
+  text-align: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+/* 
+- Mobile: 375px
+- Desktop: 1440px */
