@@ -23,17 +23,20 @@
           <div>
             <label>
               <p>DAY</p>
-              <input type="text" />
+              <input id="day" type="text" placeholder="DD" maxlength="2" />
+              <small class="error-message"></small>
             </label>
 
             <label>
-              <p>MONTH</p>
-              <input type="text" />
+              <p class="">MONTH</p>
+              <input id="month" type="text" placeholder="MM" maxlength="2" />
+              <small class="error-message"></small>
             </label>
 
             <label>
               <p>YEAR</p>
-              <input type="text" />
+              <input id="year" type="text" placeholder="YYYY" maxlength="4" />
+              <small class="error-message"></small>
             </label>
           </div>
           <div class="form-div-button">
@@ -45,15 +48,15 @@
       </div>
 
       <div class="outputs">
-        <div>
+        <div id="years-output">
           <span>--</span>
           <span>years</span>
         </div>
-        <div>
+        <div id="months-output">
           <span>--</span>
           <span>months</span>
         </div>
-        <div>
+        <div id="days-output">
           <span>--</span>
           <span>days</span>
         </div>

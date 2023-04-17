@@ -66,6 +66,11 @@ button {
   padding: 15px;
   background-color: var(--purple);
   max-width: 3.5rem;
+  transition: all 0.4s;
+}
+
+button:hover {
+  background-color: var(--off-black);
 }
 
 main {
@@ -90,9 +95,14 @@ form > div {
 form label > p {
   font-size: 0.7rem;
   letter-spacing: 0.1rem;
-  margin-bottom: 0.2rem;
   font-weight: 900;
   color: var(--smokey-grey);
+}
+
+form label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
 }
 
 form label > input {
@@ -102,6 +112,25 @@ form label > input {
   border: 1px solid var(--light-grey);
   border-radius: 5px;
   padding: 0.3rem 1rem;
+}
+
+.error + input {
+  border-color: var(--light_red);
+}
+
+.error-message {
+  color: var(--light_red);
+  font-size: 0.7rem;
+  font-style: italic;
+  min-height: 1rem;
+}
+
+.error {
+  color: var(--light_red);
+}
+
+.error-input {
+  border-color: var(--light_red);
 }
 
 .form-div-button {
