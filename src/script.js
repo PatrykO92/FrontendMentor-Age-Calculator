@@ -1,4 +1,6 @@
-// Create a new Date object with the current date and time
+const AVERAGE_NUMBER_OF_DAYS_IN_YEAR = 365.242199;
+const AVERAGE_NUMBER_OF_DAYS_IN_MONTH = 30.437;
+
 const currentDate = new Date();
 
 // Get the year, month, and day of the current date
@@ -44,22 +46,57 @@ const checkDate = (year, month, day) => {
 };
 
 const calculateYearsAndSetUpOutputs = (date) => {
-  console.log(date);
-  console.log(currentDate);
-  const diffInMs = currentDate - date;
-  const diffInDays = Math.floor(diffInMs / (1000 * 60 * 60 * 24));
-  const diffInMonths = Math.floor(diffInDays / 30.437);
-  const diffInYears = Math.round(diffInMonths / 12);
+  const totalDiffInMs = currentDate - date;
+  const totalDiffInDays = totalDiffInMs / (1000 * 60 * 60 * 24);
+  const totalDiffInMonths = Math.floor(
+    totalDiffInDays / AVERAGE_NUMBER_OF_DAYS_IN_MONTH
+  );
 
-  yearsOutput.innerHTML = `<span>${diffInYears}</span> <span>${
-    diffInYears === 1 ? "year" : "years"
+  const displayYears = Math.floor(totalDiffInMonths / 12);
+  const displayMonths = Math.floor(totalDiffInMonths - displayYears * 12);
+  const displayDays = Math.floor(
+    totalDiffInDays -
+      displayYears * AVERAGE_NUMBER_OF_DAYS_IN_YEAR -
+      displayMonths * AVERAGE_NUMBER_OF_DAYS_IN_MONTH
+  );
+
+  yearsOutput.innerHTML = `<span id="yearsOutput">0</span> <span>${
+    displayYears === 1 ? "year" : "years"
   }</span>`;
-  monthsOutput.innerHTML = `<span>${diffInMonths}</span> <span>${
-    diffInMonths === 1 ? "month" : "months"
+  monthsOutput.innerHTML = `<span id="monthsOutput">0</span> <span>${
+    displayMonths === 1 ? "month" : "months"
   }</span>`;
-  daysOutput.innerHTML = `<span>${diffInDays}</span> <span>${
-    diffInDays === 1 ? "day" : "days"
+  daysOutput.innerHTML = `<span id="daysOutput">0</span> <span>${
+    displayDays === 1 ? "day" : "days"
   }</span>`;
+
+  let yearsCounter = 0;
+  const yearsInterval = setInterval(() => {
+    if (yearsCounter <= displayYears) {
+      document.getElementById("yearsOutput").textContent = yearsCounter;
+      yearsCounter++;
+    } else {
+      clearInterval(yearsInterval);
+      let monthsCounter = 0;
+      const monthsInterval = setInterval(() => {
+        if (monthsCounter <= displayMonths) {
+          document.getElementById("monthsOutput").textContent = monthsCounter;
+          monthsCounter++;
+        } else {
+          clearInterval(monthsInterval);
+          let daysCounter = 0;
+          const daysInterval = setInterval(() => {
+            if (daysCounter <= displayDays) {
+              document.getElementById("daysOutput").textContent = daysCounter;
+              daysCounter++;
+            } else {
+              clearInterval(daysInterval);
+            }
+          }, 50);
+        }
+      }, 50);
+    }
+  }, 50);
 };
 
 const validateForm = () => {
@@ -108,7 +145,6 @@ const validateForm = () => {
       Number(monthValue) - 1,
       Number(dayValue)
     );
-    console.log(checkDate);
     calculateYearsAndSetUpOutputs(checkDate);
   } else {
     setErrorFor(dayInput, "Must be a valid date");

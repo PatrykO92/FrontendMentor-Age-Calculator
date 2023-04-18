@@ -21,8 +21,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://github.com/PatrykO92/FrontendMentor-Age-Calculator](https://github.com/PatrykO92/FrontendMentor-Age-Calculator)
+- Live Site URL: [https://frontendmentor-age-calculator.netlify.app/](https://frontendmentor-age-calculator.netlify.app/)
 
 ## Built with
 
@@ -34,4 +34,4 @@ Users should be able to:
 ## Author
 
 - Website - [Patryk Orlowski](https://github.com/PatrykO92)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/PatrykO92)
+- Frontend Mentor - [@PatrykO92](https://www.frontendmentor.io/profile/PatrykO92)
